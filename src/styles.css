@@ -1,0 +1,113 @@
+:root {
+    font-family: sans-serif, Arial, 'Times New Roman';
+    --title-font-color: #f5f5f4;
+    --title-font-size: 60px;
+    --tab-color: #dc2626;
+    --description-font-size: 30px;
+    --description-font-color: #f5f5f4;
+    --body-width: 600px;
+    --vertical-background-width: 200px;
+}
+
+html {
+    min-height: 100vh;
+    /* min-width: 100vw; */
+}
+
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/**** Webpage container ****/
+
+body {
+    margin: 0px;
+    background-image: url('./assets/images/website-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.webpage-container {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-background {
+    width: calc(var(--body-width) + var(--vertical-background-width));
+    min-height: 100vh;
+    background-color: rgb(0,0,0,0.5);
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/**************************/
+
+/**** Header of website ****/
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px 70px 0px;
+}
+
+.restaurant-title {
+    font-size: var(--title-font-size);
+    margin: 0px 0px 30px 0px;
+
+    color: var(--title-font-color);
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 70px;
+
+    color: var(--tab-color);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/**************************/
+
+/**** Content of webpage ****/
+
+/* General */
+.body {
+    width: var(--body-width);
+    display: grid;
+    grid-template-columns: 1fr ;
+    justify-content: center;
+    justify-items: center;
+    gap: 30px;
+}
+
+/* Home Page */
+.storeFront-img {
+    width: var(--body-width);
+    height: auto;
+    border-radius: 5px;
+}
+
+.restaurant-description {
+    /* width: var(--body-width); */
+    /* width: 100%; */
+    text-align: center;
+    font-size: var(--description-font-size);
+    color: var(--description-font-color);
+}
+
+.footer {
+    color:white;
+    font-size: 30px;
+}
+
+/* Menu Page */
