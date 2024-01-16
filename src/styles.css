@@ -5,7 +5,7 @@
     --tab-color: #dc2626;
     --description-font-size: 30px;
     --description-font-color: #f5f5f4;
-    --body-width: 600px;
+    --body-width: 700px;
     --vertical-background-width: 200px;
 }
 
@@ -41,7 +41,7 @@ body {
     width: calc(var(--body-width) + var(--vertical-background-width));
     min-height: 100vh;
     background-color: rgb(0,0,0,0.5);
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,11 +76,19 @@ body {
     font-weight: bold;
 }
 
+.tab-button:hover {
+    cursor: pointer;
+}
+
+.selected-tab {
+    text-decoration: underline;
+}
+
 /**************************/
 
 /**** Content of webpage ****/
 
-/* General */
+/**** General ****/
 .body {
     width: var(--body-width);
     display: grid;
@@ -90,7 +98,7 @@ body {
     gap: 30px;
 }
 
-/* Home Page */
+/**** Home Page ****/
 .storeFront-img {
     width: var(--body-width);
     height: auto;
@@ -98,8 +106,6 @@ body {
 }
 
 .restaurant-description {
-    /* width: var(--body-width); */
-    /* width: 100%; */
     text-align: center;
     font-size: var(--description-font-size);
     color: var(--description-font-color);
@@ -110,4 +116,108 @@ body {
     font-size: 30px;
 }
 
-/* Menu Page */
+/**** Menu Page ****/
+.menu {
+    display: grid; 
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    row-gap: 80px;
+}
+
+.menu-option {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.menu-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    grid-row: 1 / 3;
+}
+
+.menu-title,
+.menu-description {
+    color: var(--description-font-color);
+}
+
+.menu-title {
+    margin: 0px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.menu-description {
+    margin: 0px;
+    font-size: 25px;
+    text-align: center;
+}
+
+/**** Contact Page ****/
+.contact-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.contact-header {
+    color: var(--description-font-color);
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+.contact-container {
+    color: var(--description-font-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 100px;
+    justify-content: space-between;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.icon-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-title,
+.contact-detail {
+    margin: 0px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 40px;
+    display: grid;
+    font-weight: bold;
+
+}
+
+.contact-detail {
+    font-size: 25px;
+}
+
+.contact-icon {
+    filter: invert(29%) sepia(92%) saturate(2808%) hue-rotate(347deg) brightness(88%) contrast(96%);
+    width: 60px;
+}
+
+.address-detail {
+    white-space: pre;
+}
+
+/**************************/

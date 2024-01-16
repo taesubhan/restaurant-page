@@ -1,17 +1,17 @@
-import storeFront from './assets/images/Exterior-Storefront.png';
-import {createDiv, appendChildren} from './DOM-operations.js';
+import storeFront from '../assets/images/exterior-storefront.png';
+import {createDiv, appendChildren} from '../functions/DOM-operations.js';
 
 
-function createWebpageContainer() {
+function createWebpageContainer(headerFunc, bodyFunc, footerFunc) {
     const webpageContainer = createDiv('webpage-container', 'background');
 
     const verticalBackground = createDiv('vertical-background');
     verticalBackground.setAttribute('id', 'someRandomID');
 
     webpageContainer.appendChild(verticalBackground);
-    verticalBackground.appendChild(createHeader());
-    verticalBackground.appendChild(createBody());
-    verticalBackground.appendChild(createFooter());
+    verticalBackground.appendChild(headerFunc());
+    verticalBackground.appendChild(bodyFunc());
+    verticalBackground.appendChild(footerFunc());
 
     return webpageContainer;
 }
@@ -30,13 +30,13 @@ function createHeader() {
 function createTabs() {
     const tabs = createDiv('tabs');
 
-    const homePage = createDiv('home-page');
+    const homePage = createDiv('home-page', 'tab-button');
     homePage.textContent = 'Home';
 
-    const menuPage = createDiv('menu-page');
+    const menuPage = createDiv('menu-page', 'tab-button');
     menuPage.textContent = 'Menu';
 
-    const contactPage = createDiv('contact-page');
+    const contactPage = createDiv('contact-page', 'tab-button');
     contactPage.textContent = 'Contact';
 
     appendChildren(tabs, homePage, menuPage, contactPage);
@@ -64,15 +64,15 @@ function createBody() {
     return body;
 }
 
-function createFooter(childNode) {
+function createFooter() {
     const footer = createDiv('footer');
     return footer;
 }
 
 function createHomePage() {
     const content = document.querySelector('#content');
-    content.appendChild(createWebpageContainer());
+    content.appendChild(createWebpageContainer(createHeader, createBody, createFooter));
 }
 
-export {createHomePage};
+export {createHomePage, createWebpageContainer, createHeader, createFooter};
 

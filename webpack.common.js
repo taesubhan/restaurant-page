@@ -9,7 +9,6 @@ module.exports = {
         // assetModuleFilename: 'images/[name][ext]',
         clean: true,
     },
-    devtool: 'inline-source-map',
     module: {
         rules: [
             {
