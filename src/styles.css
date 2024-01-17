@@ -74,6 +74,7 @@ body {
     color: var(--tab-color);
     font-size: 40px;
     font-weight: bold;
+    user-select: none;
 }
 
 .tab-button:hover {
